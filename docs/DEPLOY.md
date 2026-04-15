@@ -1,5 +1,18 @@
 # Quick Deployment
 
+## HostGator (static site, same account as Rawls / Cresium)
+
+After clone, add remotes (same URL pattern as your other `~/repos/*.git` projects):
+
+```bash
+git remote add hostgator ssh://agmsxxte@50.6.160.176:2222/home2/agmsxxte/repos/otrcable.git
+git remote add production ssh://agmsxxte@otrcable.com/home2/agmsxxte/repos/otrcable.git
+```
+
+Deploy from Git Bash / WSL: `./deploy.sh` (pushes `origin`, `hostgator`, `production`, then checks out into `~/otrcable.com`). Point **otrcable.com** document root at `/home2/agmsxxte/otrcable.com` in cPanel.
+
+---
+
 1. **Requirements**
    - Node.js 18+
    - MySQL 8.0+

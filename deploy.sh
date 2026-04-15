@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
-# OTR Cable — push Git, then rsync static site to HostGator.
-# Requires: git, rsync, ssh (Git for Windows / WSL / macOS / Linux).
+# OTR Cable — HostGator deploy (same pattern as rawls-precision-construction):
+#   1) git push origin
+#   2) git push hostgator  (+ production remote when configured — mirrors Rawls)
+#   3) SSH: git checkout from bare repo into live docroot (GIT_WORK_TREE)
 #
-# Defaults match HostGator cPanel user agmsxxte. Override if needed:
-#   OTR_DEPLOY_HOST=otrcable.com OTR_DEPLOY_PATH=/home2/agmsxxte/public_html ./deploy.sh
+# Server layout matches your other sites (see cresiumgroup / rawls remotes):
+#   Bare:   /home2/agmsxxte/repos/otrcable.git
+#   Live:   /home2/agmsxxte/otrcable.com   (set HostGator document root here)
+#
+# One-time server setup (already done if bare repo exists):
+#   ssh -p 2222 agmsxxte@50.6.160.176 'git init --bare /home2/agmsxxte/repos/otrcable.git && git -C /home2/agmsxxte/repos/otrcable.git symbolic-ref HEAD refs/heads/main'
+#
+# Requires: git, ssh (Git Bash / WSL / macOS / Linux). No rsync.
 
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
-OTR_DEPLOY_HOST="${OTR_DEPLOY_HOST:-otrcable.com}"
-OTR_DEPLOY_USER="${OTR_DEPLOY_USER:-agmsxxte}"
-OTR_SSH_PORT="${OTR_SSH_PORT:-2222}"
-# Prefer addon docroot so Rawls never shares public_html with this site.
-OTR_DEPLOY_PATH="${OTR_DEPLOY_PATH:-/home2/agmsxxte/otrcable.com}"
-
-if ! command -v rsync >/dev/null 2>&1; then
-  echo "Error: rsync not found. Install Git for Windows (includes rsync) or use WSL."
-  exit 1
-fi
+BARE_REPO="/home2/agmsxxte/repos/otrcable.git"
+DOCROOT="${OTR_DOCROOT:-/home2/agmsxxte/otrcable.com}"
 
 if [ -n "$(git status --porcelain 2>/dev/null || true)" ]; then
   echo "Uncommitted changes. Commit or stash first, then run ./deploy.sh again."
@@ -27,33 +27,36 @@ if [ -n "$(git status --porcelain 2>/dev/null || true)" ]; then
 fi
 
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-echo "==> Pushing branch: $BRANCH"
+echo "==> Branch: $BRANCH"
 
-if git remote get-url origin >/dev/null 2>&1; then
-  git push origin "$BRANCH"
-else
-  echo "Error: no 'origin' remote. Add: git remote add origin git@github.com:foryoubyjohn/otrcable.git"
+if ! git remote get-url origin >/dev/null 2>&1; then
+  echo "Error: no 'origin' remote."
+  echo "  git remote add origin git@github.com:foryoubyjohn/otrcable.git"
   exit 1
 fi
 
-if git remote | grep -qx 'hostgator'; then
-  echo "==> Pushing to hostgator remote"
-  git push hostgator "$BRANCH"
+if ! git remote get-url hostgator >/dev/null 2>&1; then
+  echo "Error: no 'hostgator' remote. Add (same style as cresiumgroup / rawls):"
+  echo "  git remote add hostgator ssh://agmsxxte@50.6.160.176:2222${BARE_REPO}"
+  echo "  git remote add production ssh://agmsxxte@otrcable.com${BARE_REPO}"
+  exit 1
 fi
 
-RSYNC_RSH="ssh -p ${OTR_SSH_PORT} -o BatchMode=yes -o StrictHostKeyChecking=accept-new"
+echo "==> Pushing to origin (GitHub)"
+git push origin "$BRANCH"
 
-echo "==> rsync → ${OTR_DEPLOY_USER}@${OTR_DEPLOY_HOST}:${OTR_DEPLOY_PATH}/"
-rsync -avz --delete \
-  --exclude '.git' \
-  --exclude '.env' \
-  --exclude '.env.production' \
-  --exclude '.cursor' \
-  --exclude 'docs' \
-  --exclude 'tools' \
-  -e "$RSYNC_RSH" \
-  ./ "${OTR_DEPLOY_USER}@${OTR_DEPLOY_HOST}:${OTR_DEPLOY_PATH}/"
+echo "==> Pushing to hostgator (bare repo on HostGator)"
+git push hostgator "$BRANCH"
+
+if git remote get-url production >/dev/null 2>&1; then
+  echo "==> Pushing to production (same bare, alternate SSH host — mirrors Rawls)"
+  git push production "$BRANCH"
+fi
+
+echo "==> Deploying working tree on server"
+ssh -o StrictHostKeyChecking=accept-new agmsxxte@otrcable.com \
+  "mkdir -p '${DOCROOT}' && cd '${BARE_REPO}' && GIT_WORK_TREE='${DOCROOT}' git checkout -f '${BRANCH}'"
 
 echo ""
-echo "Done. If https://otrcable.com/ still looks wrong, set HostGator document root to:"
-echo "  ${OTR_DEPLOY_PATH}"
+echo "Done. Live files: ${DOCROOT}"
+echo "If the site URL still shows the wrong project, set HostGator document root for otrcable.com to that path."

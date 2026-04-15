@@ -1,6 +1,9 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  # Do not serve VCS / editor metadata if present under docroot
+  RewriteRule (^|/)\.git(/|$) - [F,L]
+  RewriteRule (^|/)\.cursor(/|$) - [F,L]
   RewriteRule ^api/services$ api/services.php [L,QSA]
   RewriteRule ^api/contact$ api/contact.php [L,QSA]
   RewriteRule ^index\.html$ - [L]

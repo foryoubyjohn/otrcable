@@ -6,6 +6,6 @@ alwaysApply: false
 # OTR Cable on HostGator
 
 - SSH uses the **shared cPanel user** and **port 2222** (see `~/.ssh/config`: Host `otrcable.com` → User `agmsxxte`, Port `2222`, IdentityFile `~/.ssh/id_ed25519`). Details were taken from the **rawls-precision-construction** repo (`README_DEPLOY.md`, `.cursor/rules/production-ssh.mdc`).
-- **Deploy:** `./deploy.sh` (Git Bash / WSL: push `origin`, optional `hostgator` remote, then `rsync` to `OTR_DEPLOY_PATH`). **Windows-only quick fix:** `tools/hostgator.ps1` (`DeployOtrToPublicHtml` / `DeployOtrToAddonDocroot` / restore).
+- **Deploy:** `./deploy.sh` — same flow as **rawls-precision-construction**: `git push origin` → `git push hostgator` → `git push production` → SSH `git checkout -f` from bare **`~/repos/otrcable.git`** into **`~/otrcable.com`**. Remotes mirror **cresiumgroup** (`repos/*.git` on `50.6.160.176:2222`) + **Rawls** (optional `production` hostname). **Windows-only fallback:** `tools/hostgator.ps1` (scp / restore).
 - Prefer **`DeployOtrToAddonDocroot`** + cPanel document root `~/otrcable.com` so **Rawls never shares `public_html`** with otrcable.com again.
 - If SSH from the agent fails with **connection refused on 2222**, run the same script **locally**; do not assume the server is down.
