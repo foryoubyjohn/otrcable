@@ -62,7 +62,7 @@
 1. **Structured Cabling**: `/home/ubuntu/upload/search_images/nvYVHZuiTfy4.jpeg`
 2. **Low Voltage Systems**: `/home/ubuntu/upload/search_images/VxOXltRbOS8E.jpg`
 3. **Data Centers**: `/home/ubuntu/upload/search_images/1oHLxBUagPqD.jpg`
-4. **Security Systems**: `/home/ubuntu/upload/search_images/VEszRLKZg04f.png`
+4. **Security Systems**: `images/commercial_security_surveillance.jpg` (Unsplash: Levi Meir Clancy — commercial ceiling-mounted cameras; replaces legacy kit graphic)
 5. **Access Control**: `/home/ubuntu/upload/search_images/rstRYVDavnX8.png`
 6. **Conference Room AV**: `/home/ubuntu/upload/search_images/MOuK28cKiAyv.webp`
 
