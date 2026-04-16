@@ -6,7 +6,8 @@
 #
 # Server layout matches your other sites (see cresiumgroup / rawls remotes):
 #   Bare:   /home2/agmsxxte/repos/otrcable.git
-#   Live:   /home2/agmsxxte/otrcable.com   (set HostGator document root here)
+#   Live:   /home2/agmsxxte/otrcable.com   (addon docroot — optional once cPanel points here only)
+#           /home2/agmsxxte/public_html    (primary domain docroot on this account — otrcable.com often uses this)
 #
 # One-time server setup (already done if bare repo exists):
 #   ssh -p 2222 agmsxxte@50.6.160.176 'git init --bare /home2/agmsxxte/repos/otrcable.git && git -C /home2/agmsxxte/repos/otrcable.git symbolic-ref HEAD refs/heads/main'
@@ -19,7 +20,11 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
 BARE_REPO="/home2/agmsxxte/repos/otrcable.git"
-DOCROOT="${OTR_DOCROOT:-/home2/agmsxxte/otrcable.com}"
+DOCROOT_ADDON="${OTR_DOCROOT:-/home2/agmsxxte/otrcable.com}"
+# Primary-domain docroot: without this, https://otrcable.com/ 403s if HostGator still maps the domain here.
+DOCROOT_PUBLIC="${OTR_DOCROOT_PUBLIC:-/home2/agmsxxte/public_html}"
+# Set OTR_DEPLOY_PUBLIC_HTML=0 to skip syncing public_html (e.g. after cPanel docroot is only ~/otrcable.com).
+DEPLOY_PUBLIC_HTML="${OTR_DEPLOY_PUBLIC_HTML:-1}"
 
 if [ -n "$(git status --porcelain 2>/dev/null || true)" ]; then
   echo "Uncommitted changes. Commit or stash first, then run ./deploy.sh again."
@@ -53,10 +58,18 @@ if git remote get-url production >/dev/null 2>&1; then
   git push production "$BRANCH"
 fi
 
-echo "==> Deploying working tree on server"
+echo "==> Deploying working tree on server (addon: ${DOCROOT_ADDON})"
 ssh -o StrictHostKeyChecking=accept-new agmsxxte@otrcable.com \
-  "mkdir -p '${DOCROOT}' && cd '${BARE_REPO}' && GIT_WORK_TREE='${DOCROOT}' git checkout -f '${BRANCH}'"
+  "mkdir -p '${DOCROOT_ADDON}' && cd '${BARE_REPO}' && GIT_WORK_TREE='${DOCROOT_ADDON}' git checkout -f '${BRANCH}'"
+
+if [ "$DEPLOY_PUBLIC_HTML" = "1" ]; then
+  echo "==> Deploying working tree on server (primary: ${DOCROOT_PUBLIC})"
+  ssh -o StrictHostKeyChecking=accept-new agmsxxte@otrcable.com \
+    "mkdir -p '${DOCROOT_PUBLIC}' && cd '${BARE_REPO}' && GIT_WORK_TREE='${DOCROOT_PUBLIC}' git checkout -f '${BRANCH}'"
+fi
 
 echo ""
-echo "Done. Live files: ${DOCROOT}"
-echo "If the site URL still shows the wrong project, set HostGator document root for otrcable.com to that path."
+echo "Done. Addon: ${DOCROOT_ADDON}"
+if [ "$DEPLOY_PUBLIC_HTML" = "1" ]; then
+  echo "     Primary docroot: ${DOCROOT_PUBLIC} (set OTR_DEPLOY_PUBLIC_HTML=0 when otrcable.com no longer uses public_html)"
+fi
