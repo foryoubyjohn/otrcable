@@ -9,7 +9,7 @@ git remote add hostgator ssh://agmsxxte@50.6.160.176:2222/home2/agmsxxte/repos/o
 git remote add production ssh://agmsxxte@otrcable.com/home2/agmsxxte/repos/otrcable.git
 ```
 
-Deploy from Git Bash / WSL: `./deploy.sh` (pushes `origin`, `hostgator`, `production`, then checks out into **`~/otrcable.com`** and, by default, **`~/public_html`** so the primary domain keeps working until cPanel points **only** at the addon path). Set `OTR_DEPLOY_PUBLIC_HTML=0` once docroot is fixed.
+Deploy from Git Bash / WSL: `./deploy.sh` (pushes `origin`, `hostgator`, `production`, then checks out into **`~/otrcable.com`** and, by default, **`~/public_html`**). Match this to cPanel: if **otrcable.com** still uses **`~/public_html`**, keep the default. If you move the main domain docroot to **`~/otrcable.com`** only, run with **`OTR_DEPLOY_PUBLIC_HTML=0`** so deploy does not touch `public_html`.
 
 ---
 
