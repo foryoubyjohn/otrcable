@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/../auth.php';
 require_once __DIR__ . '/posts.php';
 
-blog_admin_require_login();
+admin_require_login();
 
 $slugs = blog_admin_post_slugs();
 $titles = [
@@ -26,11 +26,13 @@ $titles = [
 </head>
 <body class="bg-slate-50 min-h-screen p-6">
 	<div class="max-w-3xl mx-auto">
-		<div class="flex justify-between items-center mb-8">
+		<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
 			<h1 class="text-2xl font-bold text-slate-900">Blog posts</h1>
-			<div class="flex gap-3">
-				<a href="../../blog/index.html" class="text-blue-600 hover:underline text-sm">View blog</a>
-				<a href="logout.php" class="text-slate-600 hover:underline text-sm">Sign out</a>
+			<div class="flex flex-wrap gap-3 text-sm">
+				<a href="../dashboard.php" class="text-slate-600 hover:underline">Dashboard</a>
+				<a href="../leads/index.php" class="text-slate-600 hover:underline">Leads</a>
+				<a href="../../blog/index.html" class="text-blue-600 hover:underline">View public blog</a>
+				<a href="../logout.php" class="text-slate-600 hover:underline">Sign out</a>
 			</div>
 		</div>
 		<p class="text-slate-600 mb-6 text-sm">Edit the main article HTML between <code class="bg-slate-200 px-1 rounded">&lt;!--otr-blog-content-start--&gt;</code> and <code class="bg-slate-200 px-1 rounded">&lt;!--otr-blog-content-end--&gt;</code>. Title, meta, featured image, and CTA are outside that region—change those in the file or ask your developer.</p>

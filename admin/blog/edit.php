@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/../auth.php';
 require_once __DIR__ . '/posts.php';
 
-blog_admin_require_login();
+admin_require_login();
 
 $slug = (string)($_GET['slug'] ?? '');
 if (!in_array($slug, blog_admin_post_slugs(), true)) {
@@ -37,8 +37,9 @@ $inner = trim($inner, "\r\n");
 </head>
 <body class="bg-slate-50 min-h-screen p-6">
 	<div class="max-w-5xl mx-auto">
-		<div class="flex justify-between items-center mb-6">
+		<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
 			<a href="index.php" class="text-blue-600 hover:underline text-sm">← All posts</a>
+			<a href="../dashboard.php" class="text-slate-600 hover:underline text-sm">Dashboard</a>
 		</div>
 		<h1 class="text-xl font-bold text-slate-900 mb-4">Edit: <?php echo htmlspecialchars($slug, ENT_QUOTES); ?>.html</h1>
 		<?php if (!empty($_GET['saved'])): ?>
