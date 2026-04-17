@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/auth.php';
 
 if (admin_logged_in()) {
@@ -18,18 +19,29 @@ $allowedNext = [
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$pass = (string)($_POST['password'] ?? '');
-	if ($hash === '' || !password_verify($pass, $hash)) {
-		$error = 'Invalid password.';
+	$throttleMsg = otr_login_throttle_check();
+	if ($throttleMsg !== null) {
+		$error = $throttleMsg;
+	} elseif (!admin_csrf_verify($_POST['csrf_token'] ?? null)) {
+		$error = 'Invalid session token. Refresh the page and try again.';
 	} else {
-		$_SESSION['otr_admin'] = true;
-		$next = (string)($_POST['next'] ?? '');
-		if (in_array($next, $allowedNext, true)) {
-			header('Location: ' . $next, true, 302);
+		$pass = (string)($_POST['password'] ?? '');
+		if ($hash === '' || !password_verify($pass, $hash)) {
+			otr_login_throttle_register_failure();
+			$error = 'Invalid password.';
 		} else {
-			header('Location: ' . admin_base_path() . '/dashboard.php', true, 302);
+			otr_login_throttle_clear();
+			session_regenerate_id(true);
+			$_SESSION['otr_admin'] = true;
+			admin_csrf_rotate();
+			$next = (string)($_POST['next'] ?? '');
+			if (in_array($next, $allowedNext, true)) {
+				header('Location: ' . $next, true, 302);
+			} else {
+				header('Location: ' . admin_base_path() . '/dashboard.php', true, 302);
+			}
+			exit;
 		}
-		exit;
 	}
 }
 
@@ -49,6 +61,7 @@ if (!in_array($next, $allowedNext, true)) {
 </head>
 <body class="bg-slate-100 min-h-screen flex items-center justify-center p-4">
 	<form method="post" class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm border border-slate-200">
+		<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(admin_csrf_token(), ENT_QUOTES); ?>">
 		<input type="hidden" name="next" value="<?php echo htmlspecialchars($next, ENT_QUOTES); ?>">
 		<h1 class="text-xl font-bold text-slate-900 mb-2">OTR Cable admin</h1>
 		<p class="text-sm text-slate-600 mb-6">Sign in to manage leads and blog content.</p>

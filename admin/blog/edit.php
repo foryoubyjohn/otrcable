@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/../bootstrap.php';
 require_once __DIR__ . '/../auth.php';
 require_once __DIR__ . '/posts.php';
 
@@ -46,6 +47,7 @@ $inner = trim($inner, "\r\n");
 			<p class="text-green-700 bg-green-50 border border-green-200 rounded px-4 py-2 text-sm mb-4">Saved successfully.</p>
 		<?php endif; ?>
 		<form method="post" action="save.php" class="space-y-4">
+			<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(admin_csrf_token(), ENT_QUOTES); ?>">
 			<input type="hidden" name="slug" value="<?php echo htmlspecialchars($slug, ENT_QUOTES); ?>">
 			<label class="block text-sm font-medium text-slate-700">Article body (HTML)</label>
 			<textarea name="html" rows="28" class="w-full font-mono text-sm border border-slate-300 rounded p-3"><?php echo htmlspecialchars($inner, ENT_QUOTES); ?></textarea>

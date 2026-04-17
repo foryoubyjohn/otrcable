@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/../bootstrap.php';
 require_once __DIR__ . '/../auth.php';
 require_once __DIR__ . '/../../config/db.php';
 
@@ -23,12 +24,18 @@ try {
 }
 
 if ($pdo && $_SERVER['REQUEST_METHOD'] === 'POST') {
+	if (!admin_csrf_verify($_POST['csrf_token'] ?? null)) {
+		http_response_code(403);
+		echo 'Invalid security token. Refresh the page and try again.';
+		exit;
+	}
 	$status = trim((string)($_POST['status'] ?? ''));
 	$allowed = ['new', 'contacted', 'qualified', 'closed', 'spam'];
 	if (in_array($status, $allowed, true)) {
 		try {
 			$u = $pdo->prepare('UPDATE `Lead` SET `status` = :s, `updatedAt` = NOW(3) WHERE `id` = :id');
 			$u->execute([':s' => $status, ':id' => $id]);
+			admin_csrf_rotate();
 			header('Location: view.php?id=' . urlencode($id) . '&saved=1', true, 302);
 			exit;
 		} catch (Throwable $e) {
@@ -90,6 +97,7 @@ if ($pdo && !$dbError) {
 			</dl>
 
 			<form method="post" class="mt-8 bg-white border border-slate-200 rounded-lg p-6">
+				<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(admin_csrf_token(), ENT_QUOTES); ?>">
 				<h2 class="font-semibold text-slate-900 mb-3">Update status</h2>
 				<label class="block text-sm text-slate-600 mb-2">Status</label>
 				<select name="status" class="border border-slate-300 rounded px-3 py-2 w-full max-w-xs mb-4">

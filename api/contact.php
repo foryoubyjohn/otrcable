@@ -2,21 +2,43 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../config/rate_limit.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 	send_json(['error' => 'Method not allowed'], 405);
 	exit;
 }
 
-// Read JSON body safely
+$contentType = (string)($_SERVER['CONTENT_TYPE'] ?? $_SERVER['HTTP_CONTENT_TYPE'] ?? '');
+if (stripos($contentType, 'application/json') === false) {
+	send_json(['success' => false, 'error' => 'Unsupported content type'], 415);
+	exit;
+}
+
 $raw = file_get_contents('php://input');
-$data = json_decode($raw ?: '[]', true);
+if ($raw === false || strlen($raw) > 65536) {
+	send_json(['success' => false, 'error' => 'Request body too large'], 413);
+	exit;
+}
+
+$data = json_decode($raw, true);
 if (!is_array($data)) {
 	send_json(['success' => false, 'error' => 'Invalid JSON body'], 400);
 	exit;
 }
 
-// Basic validation mirroring the JS expectations
+// Honeypot: bots often fill hidden "website" fields; discard quietly.
+$honeypot = trim((string)($data['website'] ?? ''));
+if ($honeypot !== '') {
+	send_json(['success' => true, 'message' => 'Message received successfully!']);
+	exit;
+}
+
+if (!otr_contact_rate_peek()) {
+	send_json(['success' => false, 'error' => 'Too many requests. Please try again later.'], 429);
+	exit;
+}
+
 $name = trim((string)($data['name'] ?? ''));
 $email = trim((string)($data['email'] ?? ''));
 $phone = trim((string)($data['phone'] ?? ''));
@@ -27,10 +49,18 @@ $formType = 'general-contact';
 $source = 'website-contact-form';
 
 $errors = [];
-if (strlen($name) < 2) $errors['name'] = 'Name must be at least 2 characters.';
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Please enter a valid email address.';
-if ($service === '') $errors['service'] = 'Please select a service.';
-if (strlen($message) < 10) $errors['message'] = 'Please enter a detailed message.';
+if (strlen($name) < 2) {
+	$errors['name'] = 'Name must be at least 2 characters.';
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	$errors['email'] = 'Please enter a valid email address.';
+}
+if ($service === '') {
+	$errors['service'] = 'Please select a service.';
+}
+if (strlen($message) < 10) {
+	$errors['message'] = 'Please enter a detailed message.';
+}
 
 if ($errors) {
 	send_json(['success' => false, 'error' => 'Validation failed', 'details' => $errors], 400);
@@ -56,10 +86,10 @@ try {
 		':status' => 'new',
 	]);
 
+	otr_contact_rate_record();
+
 	send_json(['success' => true, 'message' => 'Message received successfully!']);
 } catch (Throwable $e) {
 	log_soft_error('contact_insert_failed', ['error' => $e->getMessage()]);
 	send_json(['success' => false, 'error' => 'Internal server error'], 500);
 }
-
-
