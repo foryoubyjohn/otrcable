@@ -27,8 +27,38 @@
       <priority>0.8</priority>
     </url>
     <url>
-      <loc>https://yourdomain.com/blog.html</loc>
+      <loc>https://yourdomain.com/blog/index.html</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://yourdomain.com/blog/structured-cabling-basics.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://yourdomain.com/blog/business-security-systems.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://yourdomain.com/blog/data-center-basics-for-business.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://yourdomain.com/blog/audio-visual-systems-that-work.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://yourdomain.com/blog/low-voltage-safety-contractors.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://yourdomain.com/blog/future-proofing-technology-infrastructure.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
     </url>
 </urlset>
