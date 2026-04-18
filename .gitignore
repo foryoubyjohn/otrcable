@@ -2,3 +2,4 @@
 .env.production
 .cursor/*
 !.cursor/rules/
+.claude/
