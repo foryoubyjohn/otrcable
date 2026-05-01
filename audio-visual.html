@@ -3,235 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Visual Systems - OTR Cable Construction</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .btn-primary {
-            background-color: #2563eb;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-        }
-        .btn-outline {
-            border: 2px solid #2563eb;
-            color: #2563eb;
-            background-color: transparent;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .btn-outline:hover {
-            background-color: #2563eb;
-            color: white;
-        }
-        .btn-outline-white {
-            border: 2px solid white;
-            color: white;
-            background-color: transparent;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .btn-outline-white:hover {
-            background-color: white;
-            color: #2563eb;
-        }
-        .btn-orange {
-            background-color: #ea580c;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-orange:hover {
-            background-color: #dc2626;
-        }
-        .social-btn {
-            background-color: #2563eb;
-            color: white;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-        }
-        .social-btn:hover {
-            background-color: #1d4ed8;
-        }
-    </style>
+    <meta name="description" content="Commercial AV system installation from OTR Cable — conference rooms, digital signage, sound systems, and presentation technology.">
+    <title>Audio Visual Systems — OTR Cable Construction</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img src="images/otr_cable_logo.png" alt="OTR Cable Construction" class="h-12 w-auto">
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo"><img src="images/otr_logo_final.png" alt="OTR Cable"></a>
+                <nav><ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul></nav>
+                <div class="header-cta">
+                    <a href="tel:+15551234567" class="btn btn-sm btn-secondary">Call Now</a>
+                    <a href="contact.html" class="btn btn-sm btn-primary">Get Quote</a>
                 </div>
-                
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html#home" class="hover:text-orange-300 transition-colors">Home</a>
-                    <a href="services.html" class="hover:text-orange-300 transition-colors">Services</a>
-                    <a href="about.html" class="hover:text-orange-300 transition-colors">About</a>
-                    <a href="contact.html" class="hover:text-orange-300 transition-colors">Contact</a>
-                </nav>
-
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="tel:+15551234567" class="btn-outline-white">
-                        📞 Call Now
-                    </a>
-                    <a href="contact.html" class="btn-orange">
-                        Get Quote
-                    </a>
-                </div>
+                <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('active')"><span></span><span></span><span></span></button>
             </div>
         </div>
     </header>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('active')">&times;</button>
+        <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    </div>
 
-    <!-- Service Detail Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-gray-900 mb-8">Audio Visual Systems</h1>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="images/MOuK28cKiAyv.webp" alt="Professional conference room and AV installation" class="rounded-lg shadow-xl w-full mb-6">
-                    <p class="text-lg text-gray-700 mb-4">
-                        Transform your meeting spaces and common areas with cutting-edge audio visual solutions. 
-                        We design and install integrated AV systems for conference rooms, auditoriums, classrooms, 
-                        and digital signage applications.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-4">
-                        Our expertise includes video conferencing, presentation systems, sound reinforcement, 
-                        and interactive displays, ensuring seamless communication and engaging visual experiences.
-                    </p>
-                    <a href="contact.html" class="btn-primary">
-                        Get a Quote for AV Systems
-                    </a>
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">AV Integration</span>
+            <h1>Audio Visual Systems</h1>
+            <p>Conference room technology, digital signage, sound systems, and video walls — making your spaces work for collaboration and communication.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="content-grid">
+                <div data-animate>
+                    <span class="section-label">Collaborate Better</span>
+                    <h2>Technology That Works in the Room</h2>
+                    <p style="font-size:1.0625rem; margin-top:1.5rem; line-height:1.8;">Nothing kills a meeting faster than AV that doesn't work. We design and install audio visual systems that are intuitive, reliable, and actually get used — from huddle rooms to boardrooms to all-hands spaces.</p>
+                    <p style="font-size:1.0625rem; line-height:1.8;">We handle the full scope: display mounting, sound reinforcement, control systems, cabling infrastructure, and integration with your UC platform. One button to start a meeting — that's the goal.</p>
                 </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Key Features & Benefits</h2>
-                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700">
-                        <li>High-definition video conferencing</li>
-                        <li>Intuitive control systems</li>
-                        <li>Crystal-clear sound reinforcement</li>
-                        <li>Interactive displays and whiteboards</li>
-                        <li>Digital signage solutions</li>
-                        <li>Seamless integration with existing IT infrastructure</li>
-                    </ul>
-                    <h2 class="text-3xl font-bold text-gray-900 mt-8 mb-6">Our Expertise</h2>
-                    <p class="text-lg text-gray-700">
-                        Our AV specialists provide:
-                    </p>
-                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700 mt-3">
-                        <li>Conference room design and installation</li>
-                        <li>Auditorium and lecture hall AV solutions</li>
-                        <li>Digital signage networks</li>
-                        <li>Sound masking systems</li>
-                        <li>Video wall installations</li>
+                <div data-animate>
+                    <ul class="capability-list">
+                        <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><strong>Conference Room AV</strong> — Displays, cameras, mics, and control systems</li>
+                        <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><strong>Digital Signage</strong> — Displays, media players, and content management</li>
+                        <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><strong>Sound Systems</strong> — Distributed audio, paging, and background music</li>
+                        <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><strong>Video Walls</strong> — Multi-display arrays for lobbies and command centers</li>
+                        <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><strong>Control Automation</strong> — Touch panels and scheduling integration</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <img src="images/otr_cable_logo.png" alt="OTR Cable Construction" class="h-12 w-auto mb-4">
-                    <p class="text-gray-400 mb-6">
-                        Powering your connected future with enterprise-grade low voltage electrical 
-                        systems and technology integration services. Veteran-owned business.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://linkedin.com" target="_blank" class="social-btn">
-                            🔗
-                        </a>
-                        <a href="https://facebook.com" target="_blank" class="social-btn">
-                            📘
-                        </a>
-                    </div>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-animate>
+                <h2>Ready to Get Started?</h2>
+                <p>Let's discuss your project requirements and put together a solution that works.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-lg btn-primary">Get a Free Quote</a>
+                    <a href="tel:+15551234567" class="btn btn-lg btn-secondary">Call (555) 123-4567</a>
                 </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="aerial-construction.html" class="hover:text-white transition-colors font-semibold">Aerial Construction</a></li>
-                        <li><a href="structured-cabling.html" class="hover:text-white transition-colors">Structured Cabling</a></li>
-                        <li><a href="audio-visual.html" class="hover:text-white transition-colors">Audio Visual Systems</a></li>
-                        <li><a href="data-centers.html" class="hover:text-white transition-colors">Data Centers</a></li>
-                        <li><a href="security-systems.html" class="hover:text-white transition-colors">Security Systems</a></li>
-                        <li><a href="access-control.html" class="hover:text-white transition-colors">Access Control</a></li>
-                        <li><a href="telecommunications.html" class="hover:text-white transition-colors">Telecommunications</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
-                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
-                    <div class="space-y-3 text-gray-400">
-                        <div class="flex items-center space-x-2">
-                            <span>📞</span>
-                            <span>(555) 123-4567</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <span>✉️</span>
-                            <span>info@otrcable.com</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <span>📍</span>
-                            <span>123 Technology Drive<br>Business Park, NY 12345</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 OTR Cable Construction. All rights reserved.</p>
             </div>
         </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="logo"><img src="images/otr_logo_final.png" alt="OTR Cable" style="height:40px;"></a><p>Powering your connected future with enterprise-grade low voltage electrical systems and technology integration services. Veteran-owned business.</p></div>
+                <div><h4 class="footer-heading">Services</h4><ul class="footer-links"><li><a href="aerial-construction.html">Aerial Construction</a></li><li><a href="structured-cabling.html">Structured Cabling</a></li><li><a href="telecommunications.html">Telecommunications</a></li><li><a href="security-systems.html">Security Systems</a></li><li><a href="access-control.html">Access Control</a></li><li><a href="audio-visual.html">Audio Visual</a></li><li><a href="data-centers.html">Data Centers</a></li></ul></div>
+                <div><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div><h4 class="footer-heading">Contact</h4><ul class="footer-links"><li><a href="tel:+15551234567">(555) 123-4567</a></li><li><a href="mailto:info@otrcable.com">info@otrcable.com</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 OTR Cable Construction. All rights reserved.</p></div>
+        </div>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => { document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 50); });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
-
