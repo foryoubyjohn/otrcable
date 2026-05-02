@@ -1,0 +1,504 @@
+[
+  {
+    "id": "mid_001",
+    "title": "Social Media Request",
+    "description": "Your child insists everyone in their grade has Instagram and TikTok. They feel left out and say they're being excluded from group chats and social plans. They're 12.",
+    "age_min": 11,
+    "age_max": 13,
+    "category": "technology",
+    "conditions": [],
+    "weight": 10,
+    "choices": [
+      {
+        "id": "mid_001_a",
+        "text": "Allow it with strict monitoring — you'll follow their accounts",
+        "effects": { "child_hidden": { "social_skill": 3 }, "child_visible": { "social_life": 4 }, "school": { "social_status": 5 }, "parent": { "stress": 3, "structure": 2 }, "risks": { "mental_health": 3 } },
+        "result_text": "Your child is thrilled and reconnects socially. But you notice them checking likes obsessively and their mood correlating with online interactions."
+      },
+      {
+        "id": "mid_001_b",
+        "text": "Absolutely not until high school — the research is clear",
+        "effects": { "child_hidden": { "resilience": 2, "social_skill": -2 }, "child_visible": { "social_life": -3 }, "relationship": -3, "school": { "social_status": -3 }, "traits": { "loner": 1 } },
+        "result_text": "Your child is furious and feels like a social outcast. They're excluded from plans made in group chats. But they also avoid the cyberbullying their peers experience."
+      },
+      {
+        "id": "mid_001_c",
+        "text": "Compromise — allow messaging apps but not public social media",
+        "effects": { "child_hidden": { "social_skill": 2 }, "child_visible": { "social_life": 2 }, "parent": { "structure": 2 }, "relationship": 1 },
+        "result_text": "Your child can participate in group chats but isn't exposed to the comparison trap of public posts. It's not perfect but it's a workable middle ground."
+      }
+    ],
+    "timeline_text": "Social media boundaries established"
+  },
+  {
+    "id": "mid_002",
+    "title": "The Vaping Discovery",
+    "description": "You find a disposable vape pen in your child's backpack while looking for a permission slip. They're 13. When confronted, they claim they were 'just holding it for a friend.'",
+    "age_min": 12,
+    "age_max": 14,
+    "category": "risk",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "mid_002_a",
+        "text": "Have a serious but non-judgmental conversation about addiction and health",
+        "effects": { "child_hidden": { "morality": 2, "discipline": 1 }, "parent": { "warmth": 2 }, "risks": { "substance": -3 }, "relationship": 2 },
+        "result_text": "Your child admits to trying it once. The honest conversation about nicotine addiction and developing brains seems to land. They appreciate not being screamed at."
+      },
+      {
+        "id": "mid_002_b",
+        "text": "Severe punishment — ground them, take their phone, drug test",
+        "effects": { "child_hidden": { "discipline": 2 }, "parent": { "harshness": 4, "structure": 3 }, "relationship": -5, "risks": { "substance": -1 }, "traits": { "sneaky": 1, "rebellious": 1 } },
+        "result_text": "Your child shuts down completely. They don't vape at home anymore, but you've lost their trust. They become much better at hiding things."
+      },
+      {
+        "id": "mid_002_c",
+        "text": "Focus on the friend group — who are they hanging out with?",
+        "effects": { "child_hidden": { "social_skill": -1 }, "school": { "peer_quality": 3, "peer_pressure": -3 }, "parent": { "stress": 3 } },
+        "result_text": "You identify the friend who's supplying vapes and limit contact. Your child resents the interference but the immediate risk decreases."
+      }
+    ],
+    "timeline_text": "Vaping incident discovered"
+  },
+  {
+    "id": "mid_003",
+    "title": "Academic Pressure",
+    "description": "Middle school is significantly harder. Your child went from easy A's to struggling B's and C's. They're stressed, not sleeping well, and snapping at everyone. They say 'nothing matters anyway.'",
+    "age_min": 11,
+    "age_max": 13,
+    "category": "academics",
+    "conditions": [],
+    "weight": 9,
+    "choices": [
+      {
+        "id": "mid_003_a",
+        "text": "Reduce extracurricular commitments and prioritize mental health",
+        "effects": { "child_hidden": { "emotional_stability": 4, "resilience": 2 }, "child_visible": { "academics": -1, "health": 3 }, "parent": { "warmth": 2 }, "risks": { "mental_health": -3 } },
+        "result_text": "With less on their plate, your child's mood improves dramatically. Grades don't jump but the nihilistic attitude fades. They start sleeping again."
+      },
+      {
+        "id": "mid_003_b",
+        "text": "Get them a tutor and create a study schedule",
+        "effects": { "child_hidden": { "discipline": 3, "intelligence": 2 }, "child_visible": { "academics": 4 }, "money": -200, "parent": { "structure": 3, "stress": 2 } },
+        "result_text": "The structure helps. Grades recover, but the underlying stress hasn't been addressed. Your child performs but doesn't seem happy."
+      },
+      {
+        "id": "mid_003_c",
+        "text": "Have a heart-to-heart about what's really going on",
+        "effects": { "child_hidden": { "emotional_stability": 3, "attachment": 3 }, "parent": { "warmth": 4 }, "relationship": 4, "traits": { "sensitive": 1 } },
+        "result_text": "It turns out the academic stress is masking social anxiety and feeling like they don't fit in. Naming the real problem is the first step to solving it."
+      },
+      {
+        "id": "mid_003_d",
+        "text": "Push harder — 'You're capable of A's, you're just being lazy'",
+        "effects": { "child_hidden": { "ambition": 2, "emotional_stability": -3 }, "child_visible": { "academics": 2 }, "parent": { "harshness": 3 }, "relationship": -3, "risks": { "mental_health": 4 }, "traits": { "anxious": 1 } },
+        "result_text": "Your child pushes through and grades improve slightly. But the 'nothing matters' attitude deepens. They start spending more time alone in their room."
+      }
+    ],
+    "timeline_text": "Struggled with middle school transition"
+  },
+  {
+    "id": "mid_004",
+    "title": "First Crush",
+    "description": "Your child is clearly infatuated with someone at school. They're constantly texting, dressing differently, and asking to 'hang out at the mall.' They haven't told you directly but it's obvious.",
+    "age_min": 12,
+    "age_max": 14,
+    "category": "social",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "mid_004_a",
+        "text": "Create space for them to talk about it — be approachable, not interrogating",
+        "effects": { "child_hidden": { "social_skill": 2, "emotional_stability": 2 }, "parent": { "warmth": 3 }, "relationship": 3 },
+        "result_text": "Eventually your child opens up about their crush. Having a safe person to talk to about confusing feelings makes all the difference."
+      },
+      {
+        "id": "mid_004_b",
+        "text": "Set clear boundaries — no dating until high school",
+        "effects": { "child_hidden": { "discipline": 2 }, "parent": { "structure": 3 }, "relationship": -2, "traits": { "sneaky": 1 } },
+        "result_text": "Your child rolls their eyes but technically complies. They just call it 'hanging out with friends' instead. The boundary is mostly symbolic."
+      },
+      {
+        "id": "mid_004_c",
+        "text": "Tease them about it — 'Ooh, who's the special someone?'",
+        "effects": { "child_hidden": { "confidence": -2 }, "relationship": -2, "traits": { "loner": 1 } },
+        "result_text": "Your child is mortified and never brings up anything personal again. They learn to keep their emotional life completely private from you."
+      }
+    ],
+    "timeline_text": "First romantic interest"
+  },
+  {
+    "id": "mid_005",
+    "title": "Cyberbullying",
+    "description": "Your child shows you a group chat where classmates are mocking them with edited photos and cruel nicknames. It's been going on for weeks. They're devastated and begging not to go to school.",
+    "age_min": 11,
+    "age_max": 14,
+    "category": "social",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "mid_005_a",
+        "text": "Document everything and report to the school with evidence",
+        "effects": { "school": { "safety": 5 }, "child_hidden": { "confidence": 2 }, "parent": { "stress": 4 }, "risks": { "mental_health": -3 } },
+        "result_text": "The school takes action and the ringleaders face consequences. The bullying stops publicly but your child worries about retaliation."
+      },
+      {
+        "id": "mid_005_b",
+        "text": "Help them build resilience — 'Their opinion doesn't define you'",
+        "effects": { "child_hidden": { "resilience": 4, "confidence": 2 }, "parent": { "warmth": 2 }, "traits": { "resilient": 1 } },
+        "result_text": "Your child starts to internalize that their worth isn't determined by cruel classmates. It's a slow process but they emerge stronger."
+      },
+      {
+        "id": "mid_005_c",
+        "text": "Remove them from social media entirely and consider switching schools",
+        "effects": { "child_hidden": { "social_skill": -2 }, "child_visible": { "social_life": -3 }, "risks": { "mental_health": -2 }, "parent": { "stress": 5 } },
+        "result_text": "The immediate pain stops but your child feels like they lost. Starting over at a new school is daunting but offers a fresh start."
+      }
+    ],
+    "timeline_text": "Experienced cyberbullying"
+  },
+  {
+    "id": "mid_006",
+    "title": "Identity Exploration",
+    "description": "Your child comes to you nervously and says they might be questioning their gender identity or sexual orientation. They're clearly terrified of your reaction.",
+    "age_min": 12,
+    "age_max": 14,
+    "category": "identity",
+    "conditions": [],
+    "weight": 6,
+    "choices": [
+      {
+        "id": "mid_006_a",
+        "text": "Thank them for trusting you and affirm your unconditional love",
+        "effects": { "child_hidden": { "confidence": 5, "emotional_stability": 4, "attachment": 4 }, "parent": { "warmth": 5 }, "relationship": 5, "risks": { "mental_health": -5 } },
+        "result_text": "The relief on your child's face is immediate. Whether this is a phase or permanent, they know they're loved. That security changes everything."
+      },
+      {
+        "id": "mid_006_b",
+        "text": "Say you need time to process but you still love them",
+        "effects": { "child_hidden": { "emotional_stability": 1, "confidence": -1 }, "parent": { "stress": 4 }, "relationship": -1 },
+        "result_text": "Your honesty is appreciated but the uncertainty hurts. Your child watches you carefully for signs of rejection in the following weeks."
+      },
+      {
+        "id": "mid_006_c",
+        "text": "Dismiss it — 'You're too young to know that. It's probably a phase.'",
+        "effects": { "child_hidden": { "confidence": -4, "emotional_stability": -3 }, "relationship": -5, "risks": { "mental_health": 5 }, "traits": { "anxious": 1 } },
+        "result_text": "Your child shuts down and never brings it up again. But the rejection festers. They start hiding more of themselves from you."
+      }
+    ],
+    "timeline_text": "Child shared identity exploration"
+  },
+  {
+    "id": "mid_007",
+    "title": "Caught Cheating",
+    "description": "The school calls — your child was caught copying answers from another student during a test. They face a zero on the exam and possible suspension. Your child says 'everyone does it.'",
+    "age_min": 11,
+    "age_max": 14,
+    "category": "academics",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "mid_007_a",
+        "text": "Accept the consequences and use it as a lesson about integrity",
+        "effects": { "child_hidden": { "morality": 4, "discipline": 2 }, "parent": { "structure": 2, "warmth": 1 }, "child_visible": { "academics": -3 }, "traits": { "responsible": 1 } },
+        "result_text": "The zero hurts their grade but the conversation about integrity resonates. Your child starts to take pride in earning their own results."
+      },
+      {
+        "id": "mid_007_b",
+        "text": "Argue with the school — the punishment is too harsh",
+        "effects": { "child_hidden": { "morality": -2, "discipline": -1 }, "parent": { "stress": 3 }, "school": { "teacher_support": -5 } },
+        "result_text": "You get the suspension reduced but the teacher now views your child differently. Your child learns that consequences can be argued away."
+      },
+      {
+        "id": "mid_007_c",
+        "text": "Investigate why — are they overwhelmed? Is the material too hard?",
+        "effects": { "child_hidden": { "morality": 2, "emotional_stability": 2 }, "parent": { "warmth": 3 }, "relationship": 2, "child_visible": { "academics": 1 } },
+        "result_text": "It turns out the pressure to maintain grades for a sports team drove the cheating. You help them find a sustainable balance."
+      }
+    ],
+    "timeline_text": "Caught cheating on a test"
+  },
+  {
+    "id": "mid_008",
+    "title": "Physical Changes",
+    "description": "Puberty is hitting hard. Your child is self-conscious about their changing body, comparing themselves to peers who are developing differently. They refuse to change for gym class.",
+    "age_min": 11,
+    "age_max": 13,
+    "category": "health",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "mid_008_a",
+        "text": "Normalize it — share your own awkward puberty stories",
+        "effects": { "child_hidden": { "confidence": 3, "emotional_stability": 2 }, "parent": { "warmth": 3 }, "relationship": 3 },
+        "result_text": "Your embarrassing stories make them laugh and feel less alone. Knowing you went through it too makes the changes feel survivable."
+      },
+      {
+        "id": "mid_008_b",
+        "text": "Get them books and resources — let them learn privately",
+        "effects": { "child_hidden": { "intelligence": 1, "confidence": 2 }, "traits": { "independent": 1 } },
+        "result_text": "Your child appreciates the privacy. They educate themselves and come to you with specific questions when ready."
+      },
+      {
+        "id": "mid_008_c",
+        "text": "Ignore it — they'll figure it out like everyone does",
+        "effects": { "child_hidden": { "confidence": -2, "emotional_stability": -1 }, "parent": { "neglect": 2 }, "traits": { "anxious": 1 } },
+        "result_text": "Without guidance, your child turns to peers and the internet for information. Some of what they learn is accurate. Some isn't."
+      }
+    ],
+    "timeline_text": "Navigated puberty changes"
+  },
+  {
+    "id": "mid_009",
+    "title": "The Wrong Crowd",
+    "description": "Your child's friend group has shifted dramatically. The new friends are older, skip class, and seem to have unsupervised access to everything. Your child's attitude at home has changed.",
+    "age_min": 12,
+    "age_max": 14,
+    "category": "social",
+    "conditions": [],
+    "weight": 9,
+    "choices": [
+      {
+        "id": "mid_009_a",
+        "text": "Increase involvement — drive them places, host hangouts, know the friends",
+        "effects": { "child_hidden": { "social_skill": 1 }, "school": { "peer_quality": 3 }, "parent": { "stress": 4, "warmth": 2 }, "risks": { "crime": -2, "substance": -2 } },
+        "result_text": "Your constant presence is annoying to your child but effective. You get to know the friends and subtly influence the group dynamics."
+      },
+      {
+        "id": "mid_009_b",
+        "text": "Forbid the friendships and enforce strict curfews",
+        "effects": { "child_hidden": { "discipline": 1 }, "parent": { "harshness": 3, "structure": 3 }, "relationship": -5, "traits": { "rebellious": 2, "sneaky": 1 } },
+        "result_text": "Your child rebels hard. They sneak out, lie about where they are, and the forbidden friendships become even more appealing."
+      },
+      {
+        "id": "mid_009_c",
+        "text": "Express concern without ultimatums — keep communication open",
+        "effects": { "child_hidden": { "morality": 2 }, "parent": { "warmth": 2 }, "relationship": 1, "risks": { "crime": 1, "substance": 1 } },
+        "result_text": "Your child hears your concern but doesn't immediately change. However, when things get scary, they know they can come to you without judgment."
+      }
+    ],
+    "timeline_text": "Friend group shifted to risky peers"
+  },
+  {
+    "id": "mid_010",
+    "title": "Mental Health Crisis",
+    "description": "You find concerning messages on your child's phone — they've been telling a friend they 'don't want to be here anymore.' Your blood runs cold. They seem fine on the surface.",
+    "age_min": 12,
+    "age_max": 14,
+    "category": "health",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "mid_010_a",
+        "text": "Immediately seek professional help — therapist, counselor, crisis line",
+        "effects": { "child_hidden": { "emotional_stability": 5, "resilience": 3 }, "risks": { "mental_health": -8 }, "money": -300, "parent": { "stress": 5 } },
+        "result_text": "The therapist helps your child develop coping strategies. It's a long road but getting professional support early makes an enormous difference."
+      },
+      {
+        "id": "mid_010_b",
+        "text": "Sit with them and ask directly — 'Are you thinking about hurting yourself?'",
+        "effects": { "child_hidden": { "emotional_stability": 3, "attachment": 4 }, "parent": { "warmth": 4 }, "relationship": 4, "risks": { "mental_health": -4 } },
+        "result_text": "The direct question breaks through. Your child cries and admits they've been struggling. Just being heard and taken seriously helps immensely."
+      },
+      {
+        "id": "mid_010_c",
+        "text": "Monitor closely but don't confront — maybe it's just teen drama",
+        "effects": { "risks": { "mental_health": 3 }, "parent": { "stress": 5, "neglect": 2 } },
+        "result_text": "You watch and wait. Some days seem better. But without intervention, the dark thoughts don't go away — they just go deeper underground."
+      }
+    ],
+    "timeline_text": "Mental health concerns identified"
+  },
+  {
+    "id": "mid_011",
+    "title": "School Dance Drama",
+    "description": "The school dance is this Friday. Your child desperately wants to go but is terrified of being rejected or looking foolish. They've changed outfits six times and are on the verge of not going.",
+    "age_min": 12,
+    "age_max": 14,
+    "category": "social",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "mid_011_a",
+        "text": "Hype them up — help them feel confident and excited",
+        "effects": { "child_hidden": { "confidence": 3, "social_skill": 2 }, "parent": { "warmth": 2 }, "relationship": 2, "child_visible": { "social_life": 2 } },
+        "result_text": "Your enthusiasm is contagious. Your child goes, has an amazing time, and comes home glowing. A core memory is made."
+      },
+      {
+        "id": "mid_011_b",
+        "text": "Share that it's okay to be nervous — courage isn't the absence of fear",
+        "effects": { "child_hidden": { "resilience": 3, "confidence": 2, "emotional_stability": 2 }, "traits": { "resilient": 1 } },
+        "result_text": "Your child goes despite the nerves. The dance is awkward and imperfect but they're proud of themselves for showing up."
+      },
+      {
+        "id": "mid_011_c",
+        "text": "Don't push it — if they don't want to go, that's fine",
+        "effects": { "child_hidden": { "confidence": -2 }, "child_visible": { "social_life": -2 }, "traits": { "loner": 1 } },
+        "result_text": "Your child stays home and watches movies. On Monday, everyone is talking about the dance. Your child feels left out but also relieved."
+      }
+    ],
+    "timeline_text": "First school dance"
+  },
+  {
+    "id": "mid_012",
+    "title": "Failing a Class",
+    "description": "Mid-semester report shows your child is failing math. Not just struggling — actually failing with a 42%. The teacher says they haven't turned in homework in three weeks.",
+    "age_min": 11,
+    "age_max": 14,
+    "category": "academics",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "mid_012_a",
+        "text": "Hire a math tutor immediately and check homework daily",
+        "effects": { "child_hidden": { "discipline": 3, "intelligence": 2 }, "child_visible": { "academics": 5 }, "money": -250, "parent": { "structure": 3 }, "risks": { "dropout": -3 } },
+        "result_text": "The tutor identifies gaps in foundational knowledge. With targeted help, your child pulls the grade up to a C by semester end."
+      },
+      {
+        "id": "mid_012_b",
+        "text": "Remove all privileges until grades improve — no phone, no games, no friends",
+        "effects": { "child_hidden": { "discipline": 2, "emotional_stability": -2 }, "child_visible": { "academics": 3 }, "parent": { "harshness": 3 }, "relationship": -4, "traits": { "rebellious": 1 } },
+        "result_text": "Grades improve from fear of punishment, but your child's resentment grows. They do the minimum to get privileges back."
+      },
+      {
+        "id": "mid_012_c",
+        "text": "Ask what's really going on — is it the math or something else?",
+        "effects": { "child_hidden": { "emotional_stability": 2 }, "parent": { "warmth": 3 }, "relationship": 3, "child_visible": { "academics": 2 } },
+        "result_text": "It turns out your child is being bullied by someone in that class and has been avoiding homework to avoid thinking about school. The real problem surfaces."
+      }
+    ],
+    "timeline_text": "Failed a class mid-semester"
+  },
+  {
+    "id": "mid_013",
+    "title": "Shoplifting with Friends",
+    "description": "The mall security calls you. Your child and two friends were caught shoplifting makeup and snacks. Your child swears it was the friends' idea and they just went along with it.",
+    "age_min": 12,
+    "age_max": 14,
+    "category": "behavior",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "mid_013_a",
+        "text": "Make them face full consequences — apologize to the store, pay for items, community service",
+        "effects": { "child_hidden": { "morality": 4, "discipline": 3 }, "parent": { "structure": 3 }, "risks": { "crime": -4 }, "traits": { "responsible": 1 } },
+        "result_text": "The embarrassment of apologizing and the community service hours make a lasting impression. Your child distances themselves from those friends."
+      },
+      {
+        "id": "mid_013_b",
+        "text": "Focus on the peer pressure angle — why couldn't they say no?",
+        "effects": { "child_hidden": { "confidence": 2, "morality": 2 }, "parent": { "warmth": 2 }, "traits": { "independent": 1 } },
+        "result_text": "Your child admits they were afraid of being called a 'baby.' You work on strategies for resisting pressure. They start to find their own voice."
+      },
+      {
+        "id": "mid_013_c",
+        "text": "Minimize it — 'Kids do stupid things. Don't do it again.'",
+        "effects": { "child_hidden": { "morality": -2, "risk_tolerance": 3 }, "risks": { "crime": 3 }, "traits": { "trouble_magnet": 1 } },
+        "result_text": "Your child is relieved there's no real consequence. The message received: this isn't that serious. The boundary-testing continues."
+      }
+    ],
+    "timeline_text": "Shoplifting incident with friends"
+  },
+  {
+    "id": "mid_014",
+    "title": "Athletic Achievement",
+    "description": "Your child makes the school basketball team — they're actually good. The coach says they have real potential. But practices are 5 days a week and games are on weekends. It's a huge time commitment.",
+    "age_min": 11,
+    "age_max": 14,
+    "category": "development",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "mid_014_a",
+        "text": "Fully support it — rearrange family schedule around practices and games",
+        "effects": { "child_hidden": { "discipline": 4, "confidence": 4, "social_skill": 3 }, "child_visible": { "health": 5, "social_life": 3 }, "parent": { "stress": 3 }, "household": { "time_available": -10 }, "traits": { "competitive": 1 } },
+        "result_text": "Your child thrives on the team. The discipline of practice translates to other areas. They find their identity and their people."
+      },
+      {
+        "id": "mid_014_b",
+        "text": "Allow it only if grades stay above a B average",
+        "effects": { "child_hidden": { "discipline": 5, "ambition": 3 }, "child_visible": { "health": 3, "academics": 2 }, "parent": { "structure": 3 }, "traits": { "responsible": 1 } },
+        "result_text": "The condition motivates your child to manage their time. They learn that they can have what they want if they earn it."
+      },
+      {
+        "id": "mid_014_c",
+        "text": "Say no — academics come first, sports are a distraction",
+        "effects": { "child_hidden": { "confidence": -3, "ambition": -2 }, "child_visible": { "health": -2 }, "relationship": -4, "traits": { "underachiever": 1 } },
+        "result_text": "Your child is crushed. They watch their teammates from the sidelines. Something in their motivation dies. They stop trying as hard at everything."
+      }
+    ],
+    "timeline_text": "Made the school sports team"
+  },
+  {
+    "id": "mid_015",
+    "title": "The Party Invitation",
+    "description": "Your 13-year-old is invited to a party at a classmate's house. You find out the parents won't be home. Your child insists it's 'no big deal' and 'everyone is going.'",
+    "age_min": 12,
+    "age_max": 14,
+    "category": "social",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "mid_015_a",
+        "text": "Call the host's parents to verify supervision — if none, it's a no",
+        "effects": { "child_hidden": { "discipline": 2 }, "parent": { "structure": 3 }, "relationship": -2, "risks": { "substance": -2 } },
+        "result_text": "You confirm there's no supervision and say no. Your child is angry but safe. At school Monday, they hear about the party getting out of control."
+      },
+      {
+        "id": "mid_015_b",
+        "text": "Let them go but set a strict pickup time and check-in requirements",
+        "effects": { "child_hidden": { "social_skill": 2, "risk_tolerance": 2 }, "child_visible": { "social_life": 3 }, "risks": { "substance": 2 }, "traits": { "independent": 1 } },
+        "result_text": "Your child goes and has fun. They text you at check-in times. Nothing terrible happens this time, but you wonder what you didn't hear about."
+      },
+      {
+        "id": "mid_015_c",
+        "text": "Offer to host an alternative gathering at your house instead",
+        "effects": { "child_hidden": { "social_skill": 2 }, "parent": { "warmth": 2, "stress": 2 }, "relationship": 1, "money": -50 },
+        "result_text": "Some friends come to your house instead. It's not as 'cool' but your child appreciates the effort. You get to know their friends better."
+      }
+    ],
+    "timeline_text": "Unsupervised party situation"
+  },
+  {
+    "id": "mid_016",
+    "title": "Caught Sexting",
+    "description": "You discover your 13-year-old has been exchanging inappropriate photos with someone from school. You're horrified — this has legal implications. Your child doesn't understand the severity.",
+    "age_min": 13,
+    "age_max": 14,
+    "category": "risk",
+    "conditions": [],
+    "weight": 6,
+    "choices": [
+      {
+        "id": "mid_016_a",
+        "text": "Have a serious conversation about consent, permanence, and legal consequences",
+        "effects": { "child_hidden": { "morality": 3, "discipline": 2 }, "parent": { "warmth": 1, "structure": 3 }, "risks": { "teen_parenthood": -3 }, "relationship": 1 },
+        "result_text": "Your child is embarrassed but listens. Understanding that these images could follow them forever — and that sharing them is illegal — changes their behavior."
+      },
+      {
+        "id": "mid_016_b",
+        "text": "Take the phone permanently and lock down all technology",
+        "effects": { "child_hidden": { "social_skill": -3 }, "parent": { "harshness": 3, "structure": 3 }, "relationship": -5, "child_visible": { "social_life": -4 }, "traits": { "sneaky": 1 } },
+        "result_text": "Your child is cut off socially and furious. They find ways around the restrictions using friends' devices. The behavior goes underground."
+      },
+      {
+        "id": "mid_016_c",
+        "text": "Report to the school counselor for professional guidance",
+        "effects": { "child_hidden": { "confidence": -2 }, "school": { "teacher_support": 3 }, "risks": { "teen_parenthood": -2 }, "parent": { "stress": 4 } },
+        "result_text": "The counselor handles it with discretion and provides education to both families. Your child is embarrassed but the situation is contained."
+      }
+    ],
+    "timeline_text": "Inappropriate digital behavior addressed"
+  }
+]

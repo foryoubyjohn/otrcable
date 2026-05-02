@@ -1,0 +1,479 @@
+[
+  {
+    "id": "elem_001",
+    "title": "First Day of Kindergarten",
+    "description": "Today is the big day. Your child clings to your leg at the classroom door. The teacher smiles warmly, but your child's eyes are wide with fear. Other kids are already playing inside.",
+    "age_min": 5,
+    "age_max": 5.5,
+    "category": "milestone",
+    "conditions": [],
+    "weight": 10,
+    "choices": [
+      {
+        "id": "elem_001_a",
+        "text": "Give a big hug, say you'll be back, and walk away confidently",
+        "effects": { "child_hidden": { "resilience": 3, "confidence": 2 }, "parent": { "stress": 3 }, "relationship": 1, "traits": { "resilient": 1 } },
+        "result_text": "You hear crying as you walk away. By pickup time, your child is laughing with new friends. They barely want to leave."
+      },
+      {
+        "id": "elem_001_b",
+        "text": "Stay for the first hour to help them settle in",
+        "effects": { "child_hidden": { "attachment": 3, "confidence": -1 }, "parent": { "warmth": 3, "stress": 2 } },
+        "result_text": "Your presence helps initially, but leaving is even harder. The teacher gently suggests a quicker goodbye tomorrow."
+      },
+      {
+        "id": "elem_001_c",
+        "text": "Give them a special 'brave token' to keep in their pocket",
+        "effects": { "child_hidden": { "confidence": 3, "emotional_stability": 2 }, "parent": { "warmth": 2 }, "relationship": 3 },
+        "result_text": "Your child clutches the token all day. They show it to their new friends and tell everyone about you. The teacher says they adjusted beautifully."
+      }
+    ],
+    "timeline_text": "Started kindergarten"
+  },
+  {
+    "id": "elem_002",
+    "title": "Report Card Surprise",
+    "description": "Your child's first real report card arrives. The grades are mostly average, but the teacher notes 'difficulty paying attention' and 'talks too much in class.' Your child seems unbothered.",
+    "age_min": 6,
+    "age_max": 8,
+    "category": "academics",
+    "conditions": [],
+    "weight": 9,
+    "choices": [
+      {
+        "id": "elem_002_a",
+        "text": "Set up a structured homework routine with daily reading time",
+        "effects": { "child_hidden": { "discipline": 4, "intelligence": 2 }, "child_visible": { "academics": 5 }, "parent": { "structure": 3, "stress": 2 }, "traits": { "responsible": 1 } },
+        "result_text": "The routine is met with resistance at first, but within months, homework becomes automatic. Grades improve steadily."
+      },
+      {
+        "id": "elem_002_b",
+        "text": "Talk to the teacher about what's happening in class",
+        "effects": { "child_hidden": { "social_skill": 1 }, "school": { "teacher_support": 5 }, "child_visible": { "academics": 3 } },
+        "result_text": "The teacher appreciates your involvement and moves your child's seat away from their chatty friends. Small change, big impact."
+      },
+      {
+        "id": "elem_002_c",
+        "text": "They're young — grades don't matter yet. Let them be a kid.",
+        "effects": { "child_hidden": { "creativity": 2, "discipline": -2 }, "parent": { "stress": -2 }, "traits": { "easily_distracted": 1 } },
+        "result_text": "Your child enjoys their freedom. They're happy and creative, but the attention issues persist into the next year."
+      },
+      {
+        "id": "elem_002_d",
+        "text": "Get them tested for ADHD — better to know early",
+        "effects": { "child_hidden": { "confidence": -1 }, "parent": { "stress": 3 }, "money": -400, "child_visible": { "academics": 2 } },
+        "result_text": "The evaluation doesn't meet ADHD criteria but identifies some processing differences. The insights help you support them better."
+      }
+    ],
+    "timeline_text": "First report card received"
+  },
+  {
+    "id": "elem_003",
+    "title": "Bullying Incident",
+    "description": "Your child comes home with torn clothes and won't make eye contact. After gentle questioning, they admit an older kid has been taking their lunch money and calling them names for weeks.",
+    "age_min": 7,
+    "age_max": 10,
+    "category": "social",
+    "conditions": [],
+    "weight": 9,
+    "choices": [
+      {
+        "id": "elem_003_a",
+        "text": "Go to the school administration immediately and demand action",
+        "effects": { "child_hidden": { "confidence": 2 }, "school": { "safety": 5 }, "parent": { "stress": 3 }, "risks": { "mental_health": -3 } },
+        "result_text": "The school intervenes. The bullying stops, but your child is labeled a 'snitch' by some kids. They feel safer but socially isolated for a while."
+      },
+      {
+        "id": "elem_003_b",
+        "text": "Teach your child strategies to handle it — assertiveness, humor, avoidance",
+        "effects": { "child_hidden": { "confidence": 4, "resilience": 4, "social_skill": 2 }, "traits": { "resilient": 1, "street_smart": 1 } },
+        "result_text": "It takes courage, but your child starts standing taller. They learn to defuse situations with humor. The bully eventually moves on to easier targets."
+      },
+      {
+        "id": "elem_003_c",
+        "text": "Enroll them in martial arts for confidence and self-defense",
+        "effects": { "child_hidden": { "confidence": 5, "discipline": 3 }, "child_visible": { "health": 3 }, "money": -100, "traits": { "resilient": 1 } },
+        "result_text": "The martial arts class transforms your child's posture and confidence. They never need to fight, but they carry themselves differently. The bullying fades."
+      },
+      {
+        "id": "elem_003_d",
+        "text": "Tell them to hit back next time — bullies only understand force",
+        "effects": { "child_hidden": { "confidence": 2, "morality": -3, "impulsiveness": 3 }, "risks": { "injury": 5 }, "traits": { "defiant": 1 } },
+        "result_text": "Your child fights back and gets suspended. The bullying stops but now they're known as a fighter. The school is watching them closely."
+      }
+    ],
+    "timeline_text": "Faced bullying at school"
+  },
+  {
+    "id": "elem_004",
+    "title": "Natural Talent Discovered",
+    "description": "Your child's art teacher pulls you aside at pickup. She says your child has remarkable artistic ability — far beyond their age group. She recommends special classes.",
+    "age_min": 6,
+    "age_max": 9,
+    "category": "development",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "elem_004_a",
+        "text": "Invest in art classes and supplies — nurture this gift",
+        "effects": { "child_hidden": { "creativity": 6, "confidence": 3 }, "money": -150, "traits": { "curious": 1 } },
+        "result_text": "Your child blossoms in art class. They win a local children's art contest and their confidence soars. Art becomes their identity."
+      },
+      {
+        "id": "elem_004_b",
+        "text": "Acknowledge it but keep focus on academics — art doesn't pay bills",
+        "effects": { "child_hidden": { "creativity": -1, "discipline": 2 }, "child_visible": { "academics": 2 }, "relationship": -2 },
+        "result_text": "Your child's grades improve but something dims in their eyes. They still doodle in the margins of their homework."
+      },
+      {
+        "id": "elem_004_c",
+        "text": "Encourage it as a hobby but don't over-invest",
+        "effects": { "child_hidden": { "creativity": 3, "confidence": 1 }, "parent": { "warmth": 1 } },
+        "result_text": "Art remains a joyful outlet without the pressure of performance. Your child draws for fun and shares their work proudly."
+      }
+    ],
+    "timeline_text": "Artistic talent discovered"
+  },
+  {
+    "id": "elem_005",
+    "title": "The Lie",
+    "description": "You find out your child lied to you about finishing their homework. They've been hiding incomplete assignments in their backpack for weeks. The teacher just emailed about missing work.",
+    "age_min": 7,
+    "age_max": 10,
+    "category": "behavior",
+    "conditions": [],
+    "weight": 9,
+    "choices": [
+      {
+        "id": "elem_005_a",
+        "text": "Sit down calmly and ask why they felt they needed to lie",
+        "effects": { "child_hidden": { "morality": 3, "emotional_stability": 2 }, "parent": { "warmth": 3, "patience": 2 }, "relationship": 2, "traits": { "empathetic": 1 } },
+        "result_text": "Your child breaks down crying — they were afraid of disappointing you. You realize the pressure you've been putting on them. Together, you make a plan."
+      },
+      {
+        "id": "elem_005_b",
+        "text": "Ground them and remove privileges until all work is caught up",
+        "effects": { "child_hidden": { "discipline": 3, "morality": 1 }, "parent": { "structure": 3, "harshness": 2 }, "child_visible": { "academics": 3 }, "relationship": -2 },
+        "result_text": "The punishment is effective — homework gets done. But your child starts being more careful about hiding things rather than being honest."
+      },
+      {
+        "id": "elem_005_c",
+        "text": "Express deep disappointment — 'I'm not angry, I'm disappointed'",
+        "effects": { "child_hidden": { "morality": 2, "confidence": -2 }, "parent": { "warmth": -1 }, "relationship": -1, "traits": { "anxious": 1 } },
+        "result_text": "Your child is devastated by your disappointment. They become a perfectionist about homework but also more anxious about making mistakes."
+      }
+    ],
+    "timeline_text": "Caught lying about homework"
+  },
+  {
+    "id": "elem_006",
+    "title": "Friendship Drama",
+    "description": "Your child's best friend suddenly won't talk to them. Your child is devastated and doesn't understand what happened. They cry every night and don't want to go to school.",
+    "age_min": 7,
+    "age_max": 10,
+    "category": "social",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "elem_006_a",
+        "text": "Help them process the feelings and make new friends",
+        "effects": { "child_hidden": { "resilience": 3, "social_skill": 2, "emotional_stability": 2 }, "parent": { "warmth": 3 }, "relationship": 2, "traits": { "resilient": 1 } },
+        "result_text": "The pain is real but temporary. Your child learns that friendships can end and new ones can begin. They diversify their social circle."
+      },
+      {
+        "id": "elem_006_b",
+        "text": "Call the other child's parents to sort it out",
+        "effects": { "child_hidden": { "social_skill": -1, "confidence": -1 }, "parent": { "stress": 2 } },
+        "result_text": "The parents talk, the kids are pushed to reconcile. It works temporarily but the friendship never quite recovers its natural ease."
+      },
+      {
+        "id": "elem_006_c",
+        "text": "Tell them to toughen up — this is just how life works",
+        "effects": { "child_hidden": { "resilience": 1, "emotional_stability": -2 }, "parent": { "harshness": 2 }, "relationship": -2, "traits": { "loner": 1 } },
+        "result_text": "Your child stops talking to you about their social life. They seem to handle it alone, but you notice they spend more time in their room."
+      }
+    ],
+    "timeline_text": "Lost a close friendship"
+  },
+  {
+    "id": "elem_007",
+    "title": "Money Troubles",
+    "description": "You've been laid off. Savings will cover about two months of bills. Your child doesn't know yet, but they've been asking for expensive things their friends have.",
+    "age_min": 6,
+    "age_max": 10,
+    "category": "household",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "elem_007_a",
+        "text": "Be honest with your child in age-appropriate terms",
+        "effects": { "child_hidden": { "resilience": 3, "morality": 2 }, "household": { "monthly_income": -1500 }, "parent": { "stress": 5 }, "relationship": 2, "traits": { "responsible": 1 } },
+        "result_text": "Your child surprises you with maturity. They stop asking for things and even offer their piggy bank. The family pulls together."
+      },
+      {
+        "id": "elem_007_b",
+        "text": "Shield them completely — maintain normalcy at all costs",
+        "effects": { "household": { "monthly_income": -1500, "debt": 3000 }, "parent": { "stress": 8 }, "child_hidden": { "resilience": -1 } },
+        "result_text": "Your child notices nothing different. But the credit card debt is mounting and your stress is becoming visible in other ways."
+      },
+      {
+        "id": "elem_007_c",
+        "text": "Use this as a teaching moment about money and work",
+        "effects": { "child_hidden": { "resilience": 2, "ambition": 3 }, "household": { "monthly_income": -1500 }, "parent": { "stress": 4 }, "traits": { "responsible": 1 } },
+        "result_text": "Your child starts a lemonade stand. It makes $12, but the entrepreneurial spirit and understanding of money's value is priceless."
+      }
+    ],
+    "timeline_text": "Family faced financial hardship"
+  },
+  {
+    "id": "elem_008",
+    "title": "Sports or Music?",
+    "description": "Your child wants to try both soccer and piano lessons, but between cost and schedule, you can only commit to one extracurricular activity right now.",
+    "age_min": 6,
+    "age_max": 9,
+    "category": "development",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "elem_008_a",
+        "text": "Soccer — they need physical activity and teamwork",
+        "effects": { "child_hidden": { "social_skill": 3, "discipline": 2 }, "child_visible": { "health": 4, "social_life": 3 }, "money": -80, "traits": { "competitive": 1 } },
+        "result_text": "Your child loves the team camaraderie. They're not the best player but they never miss practice. The exercise improves their focus at school too."
+      },
+      {
+        "id": "elem_008_b",
+        "text": "Piano — discipline and creativity will serve them longer",
+        "effects": { "child_hidden": { "discipline": 4, "creativity": 3, "intelligence": 2 }, "money": -120, "traits": { "curious": 1 } },
+        "result_text": "Practice is a daily battle at first, but something clicks around month three. Your child starts playing songs they love and the discipline transfers to schoolwork."
+      },
+      {
+        "id": "elem_008_c",
+        "text": "Let them try both for a month, then choose",
+        "effects": { "child_hidden": { "confidence": 2 }, "money": -200, "parent": { "stress": 2 } },
+        "result_text": "After trying both, your child makes their own choice. They feel ownership over the decision and commit more fully because of it."
+      }
+    ],
+    "timeline_text": "Chose first extracurricular activity"
+  },
+  {
+    "id": "elem_009",
+    "title": "The Bad Influence",
+    "description": "Your child's new friend teaches them swear words and shows them violent video game content. Your child thinks it's hilarious and 'cool.' The friend's parents don't seem to monitor anything.",
+    "age_min": 8,
+    "age_max": 10,
+    "category": "social",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "elem_009_a",
+        "text": "Ban the friendship — your child can't see them anymore",
+        "effects": { "child_hidden": { "discipline": 1 }, "relationship": -4, "school": { "peer_quality": 3 }, "traits": { "rebellious": 1 } },
+        "result_text": "Your child is furious and calls you unfair. They see the friend at school anyway and now it has the thrill of being forbidden."
+      },
+      {
+        "id": "elem_009_b",
+        "text": "Have an open conversation about influences and choices",
+        "effects": { "child_hidden": { "morality": 3, "intelligence": 1 }, "parent": { "warmth": 2 }, "relationship": 2, "traits": { "independent": 1 } },
+        "result_text": "Your child listens more than you expected. They still like the friend but start making their own judgments about what's okay and what isn't."
+      },
+      {
+        "id": "elem_009_c",
+        "text": "Invite the friend over more — monitor and influence from within",
+        "effects": { "child_hidden": { "social_skill": 2 }, "parent": { "stress": 3 }, "school": { "peer_quality": 2 } },
+        "result_text": "Having the friend in your home lets you set boundaries. The friend actually responds well to structure they don't get at home."
+      }
+    ],
+    "timeline_text": "Dealt with negative peer influence"
+  },
+  {
+    "id": "elem_010",
+    "title": "Learning Struggles",
+    "description": "Despite effort, your child is falling behind in reading. They're in the lowest reading group and starting to say 'I'm stupid.' The gap between them and classmates is growing.",
+    "age_min": 6,
+    "age_max": 8,
+    "category": "academics",
+    "conditions": [],
+    "weight": 8,
+    "choices": [
+      {
+        "id": "elem_010_a",
+        "text": "Hire a tutor — invest in closing the gap now",
+        "effects": { "child_hidden": { "intelligence": 3, "confidence": 2 }, "child_visible": { "academics": 5 }, "money": -200, "traits": { "resilient": 1 } },
+        "result_text": "The one-on-one attention makes a huge difference. Within months, your child moves up a reading group. Their confidence rebounds."
+      },
+      {
+        "id": "elem_010_b",
+        "text": "Read together every night — make it a bonding activity",
+        "effects": { "child_hidden": { "intelligence": 2, "attachment": 3 }, "child_visible": { "academics": 3 }, "parent": { "warmth": 3 }, "relationship": 4 },
+        "result_text": "The nightly reading becomes sacred time. Progress is slower than a tutor, but the bond strengthens and your child associates reading with love."
+      },
+      {
+        "id": "elem_010_c",
+        "text": "Request special education evaluation from the school",
+        "effects": { "child_visible": { "academics": 4 }, "school": { "teacher_support": 5 }, "child_hidden": { "confidence": -1 } },
+        "result_text": "The evaluation identifies a mild learning difference. With accommodations, your child gets the support they need. But they notice they're 'different.'"
+      }
+    ],
+    "timeline_text": "Addressed reading difficulties"
+  },
+  {
+    "id": "elem_011",
+    "title": "Caught Stealing",
+    "description": "The store security guard catches your child pocketing a small toy. They're terrified and crying. The guard asks if you want them to call the police 'to teach a lesson.'",
+    "age_min": 7,
+    "age_max": 10,
+    "category": "behavior",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "elem_011_a",
+        "text": "Have them apologize, return it, and discuss why stealing is wrong",
+        "effects": { "child_hidden": { "morality": 5, "discipline": 2 }, "parent": { "warmth": 2, "structure": 2 }, "relationship": 1, "traits": { "responsible": 1 } },
+        "result_text": "The shame of apologizing is punishment enough. Your child never steals again and develops a strong sense of right and wrong."
+      },
+      {
+        "id": "elem_011_b",
+        "text": "Let the guard give them a stern talking-to — scare them straight",
+        "effects": { "child_hidden": { "morality": 2, "emotional_stability": -2 }, "risks": { "crime": -3 }, "traits": { "anxious": 1 } },
+        "result_text": "The guard's lecture terrifies your child. They have nightmares about police for weeks. They never steal again, but from fear rather than understanding."
+      },
+      {
+        "id": "elem_011_c",
+        "text": "Punish severely at home — no screens, no friends for a month",
+        "effects": { "child_hidden": { "discipline": 3, "morality": 1 }, "parent": { "harshness": 3, "structure": 2 }, "relationship": -3, "traits": { "sneaky": 1 } },
+        "result_text": "The harsh punishment makes an impression. Your child doesn't steal again — at least not where you can see. They learn to be more careful."
+      }
+    ],
+    "timeline_text": "Caught shoplifting incident"
+  },
+  {
+    "id": "elem_012",
+    "title": "The Science Fair",
+    "description": "Science fair projects are due next week. Your child wants to do something ambitious — a working volcano with real chemical reactions. But they'll need significant help from you.",
+    "age_min": 8,
+    "age_max": 10,
+    "category": "academics",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "elem_012_a",
+        "text": "Help them build it together — make it a parent-child project",
+        "effects": { "child_hidden": { "intelligence": 2, "creativity": 2 }, "parent": { "warmth": 3 }, "relationship": 4, "child_visible": { "academics": 2 } },
+        "result_text": "The volcano is impressive (maybe too impressive — the judges suspect parental help). But the weekend spent building it together is a core memory."
+      },
+      {
+        "id": "elem_012_b",
+        "text": "Guide them but make them do the work themselves",
+        "effects": { "child_hidden": { "discipline": 3, "confidence": 3, "intelligence": 2 }, "traits": { "independent": 1, "responsible": 1 } },
+        "result_text": "The project is messier and simpler than their vision, but it's genuinely theirs. They present it with pride and learn about the gap between ambition and execution."
+      },
+      {
+        "id": "elem_012_c",
+        "text": "Suggest something simpler they can manage alone",
+        "effects": { "child_hidden": { "confidence": -1, "ambition": -1 }, "parent": { "stress": -2 } },
+        "result_text": "Your child does a basic poster about plants. It's fine but uninspired. They notice other kids' parents clearly helped with their elaborate projects."
+      }
+    ],
+    "timeline_text": "Science fair project"
+  },
+  {
+    "id": "elem_013",
+    "title": "Neighborhood Change",
+    "description": "Crime has been increasing in your neighborhood. A break-in happened two doors down. You could move to a safer area, but it would mean changing schools and a longer commute.",
+    "age_min": 6,
+    "age_max": 10,
+    "category": "household",
+    "conditions": [],
+    "weight": 6,
+    "choices": [
+      {
+        "id": "elem_013_a",
+        "text": "Move to the safer neighborhood — safety is non-negotiable",
+        "effects": { "household": { "neighborhood_safety": 20, "monthly_bills": 300, "housing_quality": 10 }, "school": { "quality": 5, "safety": 10 }, "child_hidden": { "social_skill": -2 }, "money": -2000 },
+        "result_text": "The move is disruptive but worth it. Your child misses old friends but quickly adapts to the better environment. You sleep easier at night."
+      },
+      {
+        "id": "elem_013_b",
+        "text": "Stay and invest in home security — this is our community",
+        "effects": { "household": { "neighborhood_safety": -5 }, "child_hidden": { "resilience": 2 }, "money": -500, "risks": { "crime": 3, "injury": 2 } },
+        "result_text": "You install cameras and better locks. Your child learns street awareness early. The community is rough but it's home."
+      },
+      {
+        "id": "elem_013_c",
+        "text": "Start saving to move — stay for now but plan the exit",
+        "effects": { "household": { "neighborhood_safety": -3 }, "parent": { "stress": 3 }, "child_hidden": { "resilience": 1 } },
+        "result_text": "You tighten the budget and start a moving fund. It'll take a year, but having a plan reduces the anxiety."
+      }
+    ],
+    "timeline_text": "Neighborhood safety concerns"
+  },
+  {
+    "id": "elem_014",
+    "title": "The Gifted Program",
+    "description": "Your child's test scores qualify them for the school's gifted program. It means harder work, higher expectations, and being separated from current friends for most of the day.",
+    "age_min": 7,
+    "age_max": 9,
+    "category": "academics",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "elem_014_a",
+        "text": "Enroll them — they need to be challenged",
+        "effects": { "child_hidden": { "intelligence": 4, "ambition": 3 }, "child_visible": { "academics": 5 }, "school": { "college_preparation": 5 }, "traits": { "gifted": 2, "competitive": 1 } },
+        "result_text": "Your child thrives on the challenge. They make new friends who share their intellectual curiosity. But the workload is intense for a young kid."
+      },
+      {
+        "id": "elem_014_b",
+        "text": "Decline — let them stay with friends and enjoy childhood",
+        "effects": { "child_hidden": { "social_skill": 2 }, "child_visible": { "social_life": 3 }, "school": { "peer_quality": 2 } },
+        "result_text": "Your child stays happy and social. But by 4th grade, they're bored in class and starting to act out from lack of stimulation."
+      },
+      {
+        "id": "elem_014_c",
+        "text": "Accept but supplement with social activities outside school",
+        "effects": { "child_hidden": { "intelligence": 3, "social_skill": 2, "ambition": 2 }, "child_visible": { "academics": 4 }, "money": -100, "traits": { "gifted": 1 } },
+        "result_text": "The balance works well. Your child is challenged academically and maintains friendships through sports and activities outside school."
+      }
+    ],
+    "timeline_text": "Gifted program decision"
+  },
+  {
+    "id": "elem_015",
+    "title": "Death of a Pet",
+    "description": "Your family dog of 8 years has passed away. Your child found them in the morning and is inconsolable. This is their first experience with death.",
+    "age_min": 6,
+    "age_max": 10,
+    "category": "emotional",
+    "conditions": [],
+    "weight": 7,
+    "choices": [
+      {
+        "id": "elem_015_a",
+        "text": "Hold them, cry together, and honor the dog's memory",
+        "effects": { "child_hidden": { "emotional_stability": 3, "resilience": 3, "attachment": 2 }, "parent": { "warmth": 4 }, "relationship": 4, "traits": { "empathetic": 1 } },
+        "result_text": "Grieving together teaches your child that sadness is okay and that love doesn't end with death. You make a memory box together."
+      },
+      {
+        "id": "elem_015_b",
+        "text": "Get a new pet quickly to fill the void",
+        "effects": { "child_hidden": { "emotional_stability": -1, "resilience": -1 }, "money": -300, "parent": { "stress": 2 } },
+        "result_text": "The new puppy distracts from the grief but your child never fully processes the loss. They're anxious about the new pet dying too."
+      },
+      {
+        "id": "elem_015_c",
+        "text": "Be matter-of-fact — 'Dogs don't live as long as people. It's sad but natural.'",
+        "effects": { "child_hidden": { "resilience": 2, "emotional_stability": -1 }, "parent": { "structure": 1 }, "traits": { "independent": 1 } },
+        "result_text": "Your child accepts the logic but seems to shut down emotionally. They process the grief alone in their room."
+      }
+    ],
+    "timeline_text": "First experience with death (family pet)"
+  }
+]

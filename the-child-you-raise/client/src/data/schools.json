@@ -1,0 +1,15 @@
+{
+  "phases": {
+    "preschool": { "age_start": 3, "age_end": 5, "label": "Pre-School" },
+    "elementary": { "age_start": 5, "age_end": 11, "label": "Elementary School" },
+    "middle": { "age_start": 11, "age_end": 14, "label": "Middle School" },
+    "high": { "age_start": 14, "age_end": 18, "label": "High School" }
+  },
+  "quality_descriptors": {
+    "90": "Exceptional",
+    "70": "Good",
+    "50": "Average",
+    "30": "Below Average",
+    "10": "Poor"
+  }
+}
