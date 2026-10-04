@@ -3,3 +3,4 @@
 .cursor/*
 !.cursor/rules/
 .claude/
+.DS_Store
